@@ -47,3 +47,9 @@ D:\Azure\EmployeeCurd\EmployeeCurd\obj\Debug\net5.0\EmployeeCurd.dll
 D:\Azure\EmployeeCurd\EmployeeCurd\obj\Debug\net5.0\ref\EmployeeCurd.dll
 D:\Azure\EmployeeCurd\EmployeeCurd\obj\Debug\net5.0\EmployeeCurd.pdb
 D:\Azure\EmployeeCurd\EmployeeCurd\obj\Debug\net5.0\EmployeeCurd.genruntimeconfig.cache
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.APIGatewayEvents.dll
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.ApplicationLoadBalancerEvents.dll
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.AspNetCoreServer.dll
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.Core.dll
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.Logging.AspNetCore.dll
+D:\Azure\EmployeeCurd\EmployeeCurd\bin\Debug\net5.0\Amazon.Lambda.Serialization.SystemTextJson.dll

@@ -164,5 +164,70 @@ namespace EmployeeCurd.Controllers
                 return new JsonResult(ex);
             }
         }
+
+
+        [HttpGet]
+        [Route("DeleteFile")]
+        public JsonResult DeleteFile(string bucketName, string key)
+        {
+            try
+            {
+                using (var s3 = new AmazonS3Client(RegionEndpoint.USWest2))
+                {
+
+                    var req = new DeleteObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key
+                    };
+
+                    Task<DeleteObjectResponse> res = s3.DeleteObjectAsync(req);
+                    Task.WaitAll(res);
+
+                    if (res.IsCompletedSuccessfully)
+                    {
+                        return new JsonResult($"Deleted object {key} from bucket {bucketName}");
+                    }
+                }
+                return new JsonResult("Somethng went wrong !!");
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(ex);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetObjectList")]
+        public JsonResult GetObjectList(string bucketName)
+        {
+            try
+            {
+                using (var s3 = new AmazonS3Client(RegionEndpoint.USWest2))
+                {
+                    ListObjectsRequest listRequest = new ListObjectsRequest
+                    {
+                        BucketName = bucketName,
+                    };
+                    //Task<ListObjectsResponse> res = s3.ListObjectsAsync(listRequest);
+                    //Task.WaitAll(res);
+                    ListObjectsResponse listResponse;
+                    //listResponse = s3.ListObjectsAsync(listRequest);
+                    //foreach (S3Object obj in res.S3Objects)
+                    //{
+                    //    Console.WriteLine("Object - " + obj.Key);
+                    //    Console.WriteLine(" Size - " + obj.Size);
+                    //    Console.WriteLine(" LastModified - " + obj.LastModified);
+                    //    Console.WriteLine(" Storage class - " + obj.StorageClass);
+                    //}
+                }
+                return new JsonResult("Something went wrong");
+            }
+            catch (Exception ex)
+            {
+                return new JsonResult(ex);
+            }
+
+        }
     }
 }
